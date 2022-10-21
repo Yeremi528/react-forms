@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios"
+import { Register } from "./formularios/Register";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const {data,status,error} = useQuery(['users'],() => axios.get('https://jsonplaceholder.typicode.com/users').then((x) => x.data))
+  
+  if(status === 'loading') return <h4>Loading</h4>
+
+  if(error) return <h4>Error</h4>
+  
+  
+    return (
+    <div className="bg-gray-800 h-screen w-full text-white">
+      <Register/>
+      {data ? data.map((user:any) => <div>{user.name}</div>)  : <h4>No existe</h4>}
     </div>
-  );
+    );
+  
+  
 }
 
 export default App;
