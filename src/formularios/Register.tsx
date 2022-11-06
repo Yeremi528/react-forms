@@ -26,7 +26,7 @@ export const Register = () => {
               type="text" 
               id="name" 
               onChange={handleChange}/>
-              <ErrorMessage name="name"/>
+              <ErrorMessage name="name" component="span"/>
 
             </div>
             <div className="pt-4 mx-4">
@@ -38,7 +38,7 @@ export const Register = () => {
               id="email" 
               onBlur={handleBlur}
               onChange={handleChange}/>
-              <ErrorMessage name="email"/>
+              <ErrorMessage name="email"  component="span"/>
 
             </div>
             <div className="pt-4 mx-4">
@@ -50,7 +50,7 @@ export const Register = () => {
               id="repeatEmail"
               onBlur={handleBlur}
               onChange={handleChange}/>
-              <ErrorMessage name="repeatEmail"/>
+              <ErrorMessage name="repeatEmail"  component="span"/>
 
             </div>
             <div className="pt-4 mx-4">
@@ -61,7 +61,7 @@ export const Register = () => {
               name="password"
               id="password"
               onChange={handleChange}/>
-              <ErrorMessage name="password"/>
+              <ErrorMessage name="password" component="span"/>
             </div>
             <div className="flex items-center  justify-center mt-2 w-full border">
                 <button type="submit"  className="bg-gray-800 text-gray-100 font-bold mx-2 transition hover:scale:110 w-full rounded duration-300 py-2">Enviar</button>
