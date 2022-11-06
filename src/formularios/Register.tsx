@@ -10,7 +10,8 @@ export const Register = () => {
     password: yup.string().min(6,'The password must have more of 6 characters').required('The password is required')
   })
   return (
-    <div>
+    <div className="h-screen bg-gray-800">
+      <h4 className="text-center text-xl font-semibold pb-6">Formik Form</h4>
       <Formik  validationSchema={validationSchema}
         initialValues={{ name: "", email: "", repeatEmail: "", password: "" }}
         onSubmit={(values) => console.log(values)}

@@ -1,6 +1,8 @@
 import { Register } from "./formularios/Register";
+import {DynamicForm} from "./formularios/DynamicForm"
 import { Header } from "./components/Header";
 import {BrowserRouter,Route,Routes} from "react-router-dom"
+import { Home } from "./pages/Home";
 
 function App() {
 
@@ -10,6 +12,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/dynamic-form" element={<DynamicForm />}/>
           <Route path="/formik-component" element={<Register/>} />
         </Routes>
       </BrowserRouter>
